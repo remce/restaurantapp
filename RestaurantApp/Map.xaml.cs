@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
+using Windows.Devices.Geolocation;
+
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -66,8 +68,13 @@ namespace RestaurantApp
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private  void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            //GooglePlaces googleplaces = (GooglePlaces)App.Current.Resources["googleplaces"];
+            //if (googleplaces != null)
+            //{
+            //    await googleplaces.GetPlaces("http://places.cit.api.here.com/places/v1/discover/explore");
+            //}
         }
 
         /// <summary>
@@ -101,7 +108,7 @@ namespace RestaurantApp
         {
             //this.navigationHelper.OnNavigatedTo(e);
             Pushpin mypin = new Pushpin();
-            //mypin.Location = 
+             
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -113,7 +120,7 @@ namespace RestaurantApp
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(SettingsPage));
         }
     }
 }

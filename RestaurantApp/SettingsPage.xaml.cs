@@ -67,6 +67,7 @@ namespace RestaurantApp
         /// session.  The state will be null the first time a page is visited.</param>
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            
         }
 
         /// <summary>
@@ -107,5 +108,30 @@ namespace RestaurantApp
         }
 
         #endregion
+
+        private void LocateCityTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void restaurant_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CoffeeTea_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FastFood_Checked(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
