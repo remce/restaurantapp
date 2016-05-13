@@ -15,6 +15,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Devices.Geolocation;
+using Windows.UI.Xaml.Controls.Maps;
+using Windows.Storage.Streams;
+
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -97,9 +101,13 @@ namespace RestaurantApp
         /// </summary>
         /// <param name="e">Provides data for navigation methods and event
         /// handlers that cannot cancel the navigation request.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
+            Geolocator geolocator = new Geolocator();
+            Geoposition position = await geolocator.GetGeopositionAsync();
+            
+            
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -108,30 +116,32 @@ namespace RestaurantApp
         }
 
         #endregion
-
+        
         private void LocateCityTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+          LocateCityTextBox.Text = "";
         }
 
         private void restaurant_Checked(object sender, RoutedEventArgs e)
         {
-
+            string categorie = "restaurant";
         }
 
         private void CoffeeTea_Checked(object sender, RoutedEventArgs e)
         {
-
+            string categorie = "CoffeeTea";
         }
 
         private void FastFood_Checked(object sender, RoutedEventArgs e)
         {
-           
+            string categorie = "FastFood";
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(Map));
         }
+        
+
     }
 }

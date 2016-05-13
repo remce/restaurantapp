@@ -46,19 +46,19 @@
         </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->
-        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,4.833,19,5">
-            <TextBlock Text="Zoek stad" Style="{StaticResource LabelStyle}" Margin="10,54,0,423" RenderTransformOrigin="0.487,0.484"/>
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.833,19,0">
+            <TextBlock Text="Zoek stad" Style="{StaticResource LabelStyle}" Margin="10,54,0,363" RenderTransformOrigin="0.487,0.484" Width="104"/>
             <TextBox Name="LocateCityTextBox" TextChanged="LocateCityTextBox_TextChanged"  Margin="0,83,0,0" />
-            <TextBlock Text="Kies category" Style="{StaticResource LabelStyle}" Margin="10,142,0,335"/>
+            <TextBlock Text = "Kies category" Style="{StaticResource LabelStyle}" Margin="10,144,0,273" Width="138"/>
             <CheckBox Margin="10,172,0,0" Name="restaurant" Checked="restaurant_Checked">
-            Restaurants    
+                Restaurants
             </CheckBox>
             <CheckBox Margin="10,272,0,0" Name="CoffeeTea" Checked="CoffeeTea_Checked">
-            Koffie en thee 
+                Koffie en thee
             </CheckBox>
             <CheckBox Margin="10,222,0,0" Name="FastFood" Checked="FastFood_Checked">
-            Fast food en snacks
+                Fast food en snacks
             </CheckBox>
-         </Grid>
+        </Grid>
     </Grid>
 </Page>
